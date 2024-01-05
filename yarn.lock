@@ -294,6 +294,13 @@
     "@babel/helper-plugin-utils" "^7.20.2"
     "@babel/plugin-syntax-typescript" "^7.20.0"
 
+"@babel/runtime@^7.21.0":
+  version "7.23.7"
+  resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.23.7.tgz"
+  integrity sha512-w06OXVOFso7LcbzMiDGt+3X7Rh7Ho8MmgPoWU3rarH+8upf+wSU/grlGbWzQyr3DkdN6ZeuMFjpdwW0Q+HxobA==
+  dependencies:
+    regenerator-runtime "^0.14.0"
+
 "@babel/template@^7.0.0", "@babel/template@^7.20.7":
   version "7.20.7"
   resolved "https://registry.npmjs.org/@babel/template/-/template-7.20.7.tgz"
@@ -1078,6 +1085,14 @@
   resolved "https://registry.npmjs.org/@vue/shared/-/shared-3.3.0-beta.3.tgz"
   integrity sha512-st1SnB/Bkbb9TsieeI4TRX9TqHYIR5wvIma3ZtEben55EYSWa1q5u2BhTNgABSdH+rv3Xwfrvpwh5PmCw6Y53g==
 
+"@vuepic/vue-datepicker@^7.4.0":
+  version "7.4.0"
+  resolved "https://registry.npmjs.org/@vuepic/vue-datepicker/-/vue-datepicker-7.4.0.tgz"
+  integrity sha512-dXYzbcnRet9b+Dkh+f8rhMnjj5QXgejJTQp+ZRALgwP2oeli2c8e4VvJ0NVxoc7QTU8D5x5Et8NP51C450Pkvg==
+  dependencies:
+    date-fns "^2.30.0"
+    date-fns-tz "^1.3.7"
+
 "@vuetify/loader-shared@^1.7.1":
   version "1.7.1"
   resolved "https://registry.npmjs.org/@vuetify/loader-shared/-/loader-shared-1.7.1.tgz"
@@ -1740,6 +1755,18 @@ csstype@^2.6.8:
   version "2.6.21"
   resolved "https://registry.npmjs.org/csstype/-/csstype-2.6.21.tgz"
   integrity sha512-Z1PhmomIfypOpoMjRQB70jfvy/wxT50qW08YXO5lMIJkrdq4yOTR+AW7FqutScmB9NkLwxo+jU+kZLbofZZq/w==
+
+date-fns-tz@^1.3.7:
+  version "1.3.8"
+  resolved "https://registry.npmjs.org/date-fns-tz/-/date-fns-tz-1.3.8.tgz"
+  integrity sha512-qwNXUFtMHTTU6CFSFjoJ80W8Fzzp24LntbjFFBgL/faqds4e5mo9mftoRLgr3Vi1trISsg4awSpYVsOQCRnapQ==
+
+date-fns@^2.30.0, date-fns@>=2.0.0:
+  version "2.30.0"
+  resolved "https://registry.npmjs.org/date-fns/-/date-fns-2.30.0.tgz"
+  integrity sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==
+  dependencies:
+    "@babel/runtime" "^7.21.0"
 
 debug@^3.2.7:
   version "3.2.7"
@@ -4254,6 +4281,11 @@ redent@^3.0.0:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
 
+regenerator-runtime@^0.14.0:
+  version "0.14.1"
+  resolved "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.14.1.tgz"
+  integrity sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==
+
 regexp-tree@^0.1.24, regexp-tree@~0.1.1:
   version "0.1.27"
   resolved "https://registry.npmjs.org/regexp-tree/-/regexp-tree-0.1.27.tgz"
@@ -5148,7 +5180,7 @@ vue-shepherd@3.0.0:
   dependencies:
     shepherd.js "^11.1.0"
 
-"vue@^2.6.12 || ^3.2.4", "vue@^2.6.14 || ^3.2.0", "vue@^2.7.0 || ^3.2.25", vue@^3.0.0, "vue@^3.0.0-0 || ^2.6.0", "vue@^3.0.0-0 || ^2.7.0", vue@^3.0.11, vue@^3.2.0, vue@^3.2.25, "vue@> 3.0.0", vue@>=3, vue@>=3.0.0, "vue@2 || 3", vue@3.2.47:
+"vue@^2.6.12 || ^3.2.4", "vue@^2.6.14 || ^3.2.0", "vue@^2.7.0 || ^3.2.25", vue@^3.0.0, "vue@^3.0.0-0 || ^2.6.0", "vue@^3.0.0-0 || ^2.7.0", vue@^3.0.11, vue@^3.2.0, vue@^3.2.25, "vue@> 3.0.0", vue@>=3, vue@>=3.0.0, vue@>=3.2.0, "vue@2 || 3", vue@3.2.47:
   version "3.2.47"
   resolved "https://registry.npmjs.org/vue/-/vue-3.2.47.tgz"
   integrity sha512-60188y/9Dc9WVrAZeUVSDxRQOZ+z+y5nO2ts9jWXSTkMvayiWxCWOWtBQoYjLeccfXkiiPZWAHcV+WTPhkqJHQ==
