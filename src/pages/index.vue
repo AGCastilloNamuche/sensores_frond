@@ -228,7 +228,7 @@ const chartConfig = computed(() => {
               offsetY: 0
             },
             {
-              y: -0.03,
+              y: -0.028,
               strokeDashArray: 9,
               borderColor: "#FF4560",
               fillColor: "#FF4560",
