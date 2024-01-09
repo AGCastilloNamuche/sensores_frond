@@ -91,9 +91,13 @@ const fechaGrupo = (event) => {
 
     dataCrecimientoAcomulado.value = [-0.002, 0.026, null, 0.053, 0.062, 0.077, 0.09, 0.101, 0.112, 0.117, 0.134, 0.15, 0.163,
       0.176, 0.196, 0.211, 0.218, 0.231, 0.262, 0.268, 0.293, 0.319, 0.319, 0.337, 0.352, 0.367, 0.396, 0.414, 0.425, 0.451]
-    dataCrecimientoDiario.value = [-0.03, 0.029, null, null, 0.009, 0.015, 0.013, 0.011, 0.011, 0.004, 0.018, 0.015, 0.013,
-      0.013, 0.02, 0.015, 0.007, 0.013, 0.031, 0.007, 0.024, 0.026, 0, 0.018, 0.015, 0.015, 0.029, 0.018, 0.011, 0.026]
+    dataCrecimientoDiario.value = [-0.002, 0.029, null, null, 0.009, 0.015, 0.013, 0.011, 0.011, 0.004, 0.018, 0.015, 0.013,
+      0.013, 0.02, 0.015, 0.007, 0.013, 0.031, 0.007, 0.024, 0.026, 0, 0.018, 0.015, 0.015, 0.029, 0.018, 0.011, 0.026, -0.03]
+
+    dataContraccionDiaria.value = [null, null, null, 0.26, 0.26, 0.029, 0.024, 0.026, 0.022, 0.026, 0.026, 0.026, 0.022,
+      0.018, 0.035, 0.011, 0.022, 0.024, 0.018, 0.026, 0.026, 0.04, 0.04, 0.031, 0.024, 0.029, 0.026, 0.022, 0.024, 0.033]
   }
+
 
   return fechas.reverse();
 }
@@ -374,7 +378,9 @@ const chartConfig = computed(() => {
         dataLabels: {
           enabled: true,
           formatter: (val) => {
-            return `${val} mm`
+            if (val != null || val != undefined) {
+              return `${val} mm`
+            }
           },
           offsetY: -20,
           style: {
@@ -405,7 +411,11 @@ const chartConfig = computed(() => {
         yaxis: {
           labels: {
             formatter(value) {
-              return `${value.toFixed(3)} mm`
+              if (value != null || value != undefined) {
+                return `${value.toFixed(3)} mm`
+              } else {
+                return 'N/A'
+              }
             },
             style: {
               fontSize: '13px',
@@ -712,8 +722,8 @@ watch(() => {
       <section class="body-section">
         <VTabs v-model="tabs">
           <VTab value="item-general">Vista General</VTab>
-          <VTab value="item-reco">Recomendaciones</VTab>
-          <VTab value="item-grafico">Gráficos</VTab>
+          <!-- <VTab value="item-reco">Recomendaciones</VTab>
+          <VTab value="item-grafico">Gráficos</VTab> -->
         </VTabs>
         <VWindow v-model="tabs">
           <VWindowItem value="item-general">
@@ -739,7 +749,9 @@ watch(() => {
                       <h4 class="text-h6 text-uppercase mb-3" style="font-weight: 600;">Crecimiento de la Planta</h4>
 
                       <div class="d-flex align-center gap-2 mb-2 pb-1 flex-wrap">
-                        <h5 class="text-h3 font-weight-medium">0.121mm</h5>
+                        <h5 class="text-h3 font-weight-medium">{{ dataCrecimientoAcomulado[dataCrecimientoAcomulado.length
+                          - 1]
+                        }}mm</h5>
                         <VChip label color="success" class="text-uppercase" style="font-size: 10.5px;">
                           Total del campo
                         </VChip>
